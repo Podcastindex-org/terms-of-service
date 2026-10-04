@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Podcast Index - Terms of Service v2.0</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            max-width: 720px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #222;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 0.2em;
+        }
+        h2 {
+            font-size: 1.3em;
+            margin-top: 1.8em;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.3em;
+        }
+        .effective-date {
+            color: #666;
+            margin-bottom: 2em;
+        }
+        .summary {
+            background: #f0f7f0;
+            border-left: 4px solid #4a9;
+            padding: 12px 16px;
+            margin: 1.5em 0;
+        }
+        ul {
+            padding-left: 1.5em;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Podcast Index Terms of Service</h1>
+<p class="effective-date">Version 2.0 -Effective: October 4, 2026</p>
+
+<div class="summary">
+    <strong>The short version:</strong> The Podcast Index API and public data downloads are free to use for any purpose,
+    including commercial. There are two things you cannot do: <a href="#no-proxying">re-expose our API</a> as your own public service, or scrape
+    the API to <a href="#no-scraping">pull bulk data</a>. If you need the full dataset, download it -that's what the public data dumps are for.
+</div>
+
+<h2>1. Who We Are</h2>
+<p>
+    Podcast Index LLC ("Podcast Index," "we," "us," "our") is a partnership that exists to preserve, protect, and extend
+    the open, independent podcasting ecosystem. We provide a free, open, categorized podcast index along with APIs and
+    public data downloads so that developers, organizations, and hobbyists can build podcast experiences without having
+    to do the heavy lifting of indexing and data management themselves.
+</p>
+
+<h2>2. What You Get</h2>
+<p>
+    Our API, public data downloads, and associated documentation (collectively, "the Service") are available to you free
+    of charge for any lawful purpose, including commercial use. You may:
+</p>
+<ul>
+    <li>Use the API to build apps, websites, tools, research projects, or any other product or service.</li>
+    <li>Use the data for commercial or non-commercial purposes, including education, research, and hobby projects.</li>
+    <li>Download, store, and redistribute our public data dumps.</li>
+    <li>Build your own podcast index or database from our data and run your own public API from it.</li>
+</ul>
+
+<h2>3. What You Cannot Do</h2>
+
+<h3 id="no-proxying" style="margin-top:1em; border:none; font-size:1.1em;">No proxying the API</h3>
+<p>
+    You may <strong>not</strong> create a public-facing service that simply proxies, re-serves, or routes requests
+    to the Podcast Index API. This includes, but is not limited to, building a public API, MCP server, or similar
+    intermediary layer that passes traffic through to our infrastructure.
+</p>
+
+<h3 id="no-scraping" style="margin-top:1em; border:none; font-size:1.1em;">No scraping the API</h3>
+<p>
+    You may <strong>not</strong> systematically crawl or scrape the API to pull bulk podcast or episode data -
+    for example, sequentially walking through IDs or paging through all results. The API is designed for targeted,
+    on-demand lookups in response to user activity, not for harvesting the full dataset.
+    If scraping is detected, your credentials will be blocked.
+</p>
+
+<p>
+    <strong>Why?</strong> Our servers and bandwidth are funded by donations and the goodwill of our community. We
+    happily serve individual developers and their apps directly, but we cannot absorb the load of bulk scraping or
+    someone else's entire user base funneled through a proxy layer.
+</p>
+<p>
+    <strong>What you can do instead:</strong> If you want the full dataset, download it. We make this easy -
+    our full feed catalog is published weekly as a SQLite database, and numerous other data exports are available at
+    <a href="https://podcastindex.org/datasets">podcastindex.org/datasets</a>.
+    You are free to build your own podcast index from this data and run your own public API from it.
+</p>
+
+<h2>4. Identifying Yourself</h2>
+<p>
+    Access to the API requires registering for credentials (an API key and secret). Keep these confidential. Do not
+    share them publicly or embed them in client-side code or open-source repositories. If you believe your credentials
+    have been compromised, contact us and we will issue new ones.
+</p>
+<p>
+    We do not allow developer registrations from free email services (e.g. gmail.com) due to a history of abuse
+    from those providers. Please register with an email address tied to your project or organization.
+</p>
+<p>
+    All API requests must include a <strong>User-Agent string that specifically identifies your application</strong>.
+    Generic or default library user-agents (e.g. <code>axios</code>, <code>curl</code>, <code>wget</code>,
+    <code>GuzzleHttp</code>, <code>python-requests</code>) do not tell us who the traffic belongs to and will be
+    rate-limited or blocked. Impersonating a web browser (e.g. sending a Chrome or Firefox user-agent) or an
+    application you are not the developer of is also prohibited. Set your User-Agent to something like
+    <code>MyCoolPodcastApp/1.0</code> -your own app name, honestly represented.
+</p>
+
+<h2>5. Rate Limits and Fair Use</h2>
+<p>
+    We apply rate limits to keep the service healthy for everyone. These limits are not published -we
+    continuously tune them in response to our available budget and the traffic patterns we observe. If your
+    usage is reasonable and in the spirit of these terms, you are unlikely to hit them. If you do get
+    rate-limited and believe it's in error, reach out to us and we will work with you.
+</p>
+<p>
+    For bulk data needs, use the public data downloads rather than making large numbers of API calls.
+</p>
+<p>
+    We retain API logs for 90 days. These logs are used to detect abuse patterns, tune the platform for
+    performance, and identify gaps in our data so we can correct them.
+</p>
+
+<h2>6. No Warranty</h2>
+<p>
+    The Service is provided "as is" with no guarantees of uptime, accuracy, or fitness for any particular purpose.
+    We do our best to keep things running and correct, but we are a small, donation-funded project and cannot make
+    promises about availability or data completeness. If you rely on the Podcast Index as a key component of a
+    commercial product, you do so at your own risk.
+</p>
+
+<h2>7. Limitation of Liability</h2>
+<p>
+    To the extent permitted by law, Podcast Index LLC and its contributors are not liable for any damages arising from
+    your use of the Service. Since the Service is free, our total liability to you is zero dollars.
+</p>
+
+<h2>8. Don't Be Malicious</h2>
+<p>
+    Do not use the Service to:
+</p>
+<ul>
+    <li>Interfere with or disrupt our infrastructure.</li>
+    <li>Introduce malware, spam, or any other harmful content.</li>
+    <li>Violate applicable laws.</li>
+</ul>
+<p>
+    We reserve the right to suspend or revoke access to anyone who violates these terms or uses the Service in a way
+    that harms the project or its community.
+</p>
+
+<h2>9. Account Removal and Content Takedowns</h2>
+<p>
+    We respect the right to be forgotten. If you want your API developer account and associated data removed,
+    send an email requesting deletion to
+    <a href="mailto:abuse@podcastindex.org">abuse@podcastindex.org</a>.
+</p>
+<p>
+    Podcast Index LLC is a registered DMCA agent. If you are a content creator and want your podcast de-listed
+    from the index, send a takedown request to
+    <a href="mailto:abuse@podcastindex.org">abuse@podcastindex.org</a>.
+    You must be able to prove ownership of the content in question for the request to be processed.
+</p>
+
+<h2>10. Changes to These Terms</h2>
+<p>
+    We may update these terms from time to time. When we do, we will update the version number and effective date at the
+    top of this page. Continued use of the Service after changes are posted constitutes acceptance of the updated terms.
+</p>
+
+<h2>11. Governing Law</h2>
+<p>
+    These terms are governed by the laws of the United States and the State of Texas. Any disputes will be resolved in
+    the courts of the State of Texas.
+</p>
+
+<h2>12. Contact</h2>
+<p>
+    Questions about these terms? Email us at
+    <a href="mailto:info@podcastindex.org">info@podcastindex.org</a>.
+</p>
+
+</body>
+</html>
